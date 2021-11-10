@@ -8,7 +8,7 @@ import datetime
 class checker:
 
     def critical_level(self):
-        battery_threshold=65
+        battery_threshold=99
         memory_threshold=30 #percentage
         context_switch_threshold=1455055
 

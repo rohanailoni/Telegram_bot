@@ -15,13 +15,12 @@ collection=db["status"]
 ######################################
 Owner_id="1246896341"
 
-def make_reply(msg):
+def make_reply(msg,by):
     reply = None
     print(msg)
     if msg is not None:
         if msg=="/status":
-            reply=""
-            
+            reply=""            
             dict=checker().Status()
             collection.insert_one(dict)
             for i in dict:
@@ -47,7 +46,7 @@ def make_reply(msg):
                 reply=reply+i+":--"+str(dict[i])+"\n\n\n"
         else:
 
-            reply = "okay\n hellow \n how are you"
+            reply = "okay"+by+"\n hellow \n how are you"
     return reply
 
 
@@ -59,11 +58,9 @@ def critical_changer():
         reply=reply+i+":--"+str(dict[i])+"\n"
     bot.send_message(reply,Owner_id)
 
-#schedule.every(10).seconds.do(critical_changer)
 i=0
 update_id = None
 while True:
-    #schedule.run_pending()
     print(i)
     updates = bot.get_updates(offset=update_id)
     i+=1
@@ -78,10 +75,11 @@ while True:
                 
                 try:
                     message = str(item["message"]["text"])
+                    by_user=str(item["message"]["from"]["last_name"])
                 except:
                     message = None
                 from_ = item["message"]["from"]["id"]
-                reply = make_reply(message)
+                reply = make_reply(message,by_user)
                 
                 bot.send_message(reply, from_)
     except KeyError:
