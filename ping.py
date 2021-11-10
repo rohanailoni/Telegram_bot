@@ -7,9 +7,9 @@ Mongo="mongodb+srv://rohan:Z9RicwzgtBzh4hzI@cluster0.29lux.mongodb.net/Isa_da?re
 ###########connecting to mongo client#############
 cluster=MongoClient(Mongo)
 db=cluster["Isa_da"]
-collection=db["status"]
+collection=db["retard"]
 ###################################################
 
 
-post={"name":"rohan","score":5}
+post={"name":"rohan","score":{"rk":2333}}
 collection.insert_one(post)
