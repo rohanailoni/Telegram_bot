@@ -28,14 +28,3 @@ class telegram_chatbot():
 
 
 t=telegram_chatbot("2140031887:AAGQH2FIYkwjXCFkMpcurakML3EJd0ITA8Q")
-msg="""
--------critical message---------
-
-ram usage 71%
-heavy ram usage
-
-
-
-
-"""
-t.send_message(msg,"1246896341")

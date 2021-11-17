@@ -30,20 +30,6 @@ def make_reply(msg,by):
             dict=checker().Battery()
             for i in dict:
                 reply=reply+i+":--"+str(dict[i])+"\n\n\n"
-        elif msg=="/ram":
-            reply=""
-            
-            dict=checker().Ram_usage()
-            
-            for i in dict:
-                reply=reply+i+":--"+str(dict[i])+"\n\n\n"
-        elif msg=="/cpu":
-            reply=""
-            
-            dict=checker().cpu_usage()
-            
-            for i in dict:
-                reply=reply+i+":--"+str(dict[i])+"\n\n\n"
         else:
 
             reply = "okay"+by+"\n hellow \n how are you"
